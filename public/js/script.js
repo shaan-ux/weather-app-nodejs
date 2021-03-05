@@ -2,6 +2,8 @@ const form = document.querySelector('form');
 const messageOne = document.querySelector('#message-1');
 const messageTwo = document.querySelector('#message-2');
 
+console.log('Testing git version control system');
+
 form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -21,4 +23,3 @@ form.addEventListener('submit', e => {
     });
 
 });
-
