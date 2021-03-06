@@ -5,6 +5,7 @@ const forecast = require('./utils/forecast');
 const geocode = require('./utils/geocode');
 
 const app = express();
+const port = process.env.PORT || 3000;
 const publicDirPath = path.join(__dirname, '../public');
 
 //Handlebars configuration
@@ -72,16 +73,6 @@ app.get('/weather', (req, res) => {
     });
 });
 
-app.get('/products', (req, res) => {
-    if(!req.query.search) {
-        return res.send({
-            error: 'Search term is required',
-        });
-    }
-
-    res.send(req.query.search);
-});
-
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: 'Help 404 Page',
@@ -98,6 +89,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Sever Started');
+app.listen(port, () => {
+    console.log('Sever Started on port ' + port);
 });
