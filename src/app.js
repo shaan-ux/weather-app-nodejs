@@ -18,7 +18,7 @@ app.use(express.static(publicDirPath));
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Dynamic Home page',
+        title: 'Weather App',
         name: 'Shaan',
     });
 });
